@@ -1,0 +1,79 @@
+{
+  "run_date": "2026-10-09",
+  "shop_date": "2026-08-31",
+  "model": "gpt-6-luna",
+  "database": "data/campus_customs_new.db (reset from data/campus_customs.db before the run)",
+  "starting_checking_balance": 3400.0,
+  "ending_checking_balance": 152.0,
+  "tickets": [
+    {
+      "id": 101,
+      "type": "customer_order",
+      "requester": "Tauhid Zaman",
+      "final_status": "resolved",
+      "boss_outcome": "waiting_on_approval",
+      "run_id": "e1fb9ffc1472",
+      "outcome": "Size S tee was out of stock. The overdue $840 invoice blocking the vendor was paid, a 1-unit restock PO ($8) was paid, and Tauhid got a draft offering M/L/XL now or waiting for size S.",
+      "agents": {
+        "boss": "Read the ticket, routed it to Inventory, Accounting, and Customer Service, checked the board and cash, and listed the approvals in order (invoice first, then PO, then draft).",
+        "inventory": "Found CC-TEE-WHITE size S at 0 (shortfall 1), M/L/XL in stock, matched Bulldog Print Co (apparel, 5-day lead), and flagged that open invoice 501 blocked shipping. Restock cost $8.00.",
+        "accounting": "Confirmed invoice 501 ($840.00, 3 days overdue), requested its payment, and drafted an $8.00 PO for 1 tee in size S that stayed blocked until the invoice was paid.",
+        "customer_service": "Drafted a note to Tauhid: size S is unavailable, M/L/XL are ready now, a restock is being arranged, and no date is promised. Not sent.",
+        "facilities": "Not called."
+      },
+      "human_approvals": [
+        { "board_item": 1, "kind": "payment", "what": "Pay Bulldog Print Co invoice 501", "amount": 840.0, "decision": "approved (executed)", "approved_by": "kay", "payment_id": 1 },
+        { "board_item": 2, "kind": "purchase_order", "what": "PO: 1 x CC-TEE-WHITE size S from Bulldog Print Co", "amount": 8.0, "decision": "approved (executed)", "approved_by": "kay", "payment_id": 2 },
+        { "board_item": 3, "kind": "customer_message", "what": "Draft to Tauhid Zaman", "amount": null, "decision": "approved (draft only, not sent)", "approved_by": "kay" }
+      ],
+      "cash_before": 3400.0,
+      "cash_change": -848.0,
+      "cash_after": 2552.0
+    },
+    {
+      "id": 102,
+      "type": "rent_notice",
+      "requester": "Elm City Properties",
+      "final_status": "resolved",
+      "boss_outcome": "waiting_on_approval",
+      "run_id": "cfe6176e9f76",
+      "outcome": "The landlord's notice matched lease 1 ($2,400 due 2026-09-02, 2 days out). The rent was paid, and the lease's next due date moved to 2026-10-02.",
+      "agents": {
+        "boss": "Routed the rent notice to Facilities only, then confirmed the pending request on the board and that cash covered it.",
+        "facilities": "Checked the notice against lease 1 (landlord, due date, amount) and asked Accounting to request the rent payment.",
+        "accounting": "Confirmed $2,400.00 rent due 2026-09-02 and put a pending rent payment request on the board (item 4).",
+        "inventory": "Not called.",
+        "customer_service": "Not called."
+      },
+      "human_approvals": [
+        { "board_item": 4, "kind": "payment", "what": "Pay Elm City Properties rent for lease 1", "amount": 2400.0, "decision": "approved (executed)", "approved_by": "kay", "payment_id": 3 }
+      ],
+      "cash_before": 2552.0,
+      "cash_change": -2400.0,
+      "cash_after": 152.0
+    },
+    {
+      "id": 103,
+      "type": "price_override",
+      "requester": "Yale AI Club",
+      "final_status": "resolved",
+      "boss_outcome": "waiting_on_approval",
+      "run_id": "2b69a2a592b9",
+      "outcome": "Only 8 of 20 size M hoodies in stock. A $46.00/unit discount (20.7% off $58, $24 margin per unit) was approved, and a draft offering the 8 on hand, waiting, or other sizes was approved. No restock was bought: $264 needed vs $152 in cash.",
+      "agents": {
+        "boss": "Sent the ticket to Inventory and Accounting at the same time, then Customer Service (plus a second check that the draft existed). Flagged the $112 cash shortfall for the restock as a human decision.",
+        "inventory": "Found 8 size M on hand (shortfall 12), other sizes S 4 / L 14 / XL 6. Bulldog Print Co can now ship (invoice 501 already paid); a 12-unit restock would cost $264.00 and could arrive 2026-09-05.",
+        "accounting": "Proposed $46.00 per hoodie (20.7% off list, above the $22 cost) for $480.00 order profit, and noted that only $152.00 cash was available, so no PO was drafted.",
+        "customer_service": "Drafted a reply to the Yale AI Club: 8 size M ready now, the discount is under review, and options to wait or choose other sizes. On a second request, confirmed the draft existed and didn't make a duplicate.",
+        "facilities": "Not called."
+      },
+      "human_approvals": [
+        { "board_item": 5, "kind": "discount", "what": "20 x CC-HOOD-NAVY at $46.00 each (20.7% off)", "amount": null, "decision": "approved (price only, no cash)", "approved_by": "kay" },
+        { "board_item": 6, "kind": "customer_message", "what": "Draft to Yale AI Club", "amount": null, "decision": "approved (draft only, not sent)", "approved_by": "kay" }
+      ],
+      "cash_before": 152.0,
+      "cash_change": 0.0,
+      "cash_after": 152.0
+    }
+  ]
+}

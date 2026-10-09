@@ -1,0 +1,23 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node / Vite
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# Temp files
+output/*.tmp
+output/audit_trail.json.tmp
+.DS_Store
+Thumbs.db
+
+# Note: data/*.db files are committed on purpose (graders need both).
+
+# Personal, not part of the submission
+folder-joke.md

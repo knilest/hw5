@@ -1,0 +1,7 @@
+# Python packages for the MCP server and the FastAPI + PydanticAI backend.
+# Tested with: fastmcp 4.0.11, pydantic-ai-slim 2.54.0, fastapi 0.143.0, uvicorn 0.54.0 (Python 3.14).
+fastmcp>=4.0
+pydantic-ai-slim[openai,mcp]>=2.54
+python-dotenv>=1.0.1
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0

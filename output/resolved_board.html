@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Customs: Resolved Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --forest: #2f5d3a; --forest-dark: #1f3f27; --forest-light: #e8f0ea; --ink: #2b2b2b; --muted: #6b6b6b; --line: #d9dfd9; --paper: #fbfaf6; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Cormorant Garamond", Garamond, Georgia, serif; font-weight: 300; font-size: 19px; line-height: 1.55; }
+  header { background: #fff; border-bottom: 1px solid var(--line); padding: 32px 24px 0; }
+  .wrap { max-width: 1240px; margin: 0 auto; }
+  h1 { margin: 0; font-weight: 400; font-size: 40px; color: var(--forest-dark); }
+  .sub { color: var(--muted); font-style: italic; margin: 4px 0 20px; }
+  nav { display: flex; gap: 4px; }
+  nav button { font: inherit; font-weight: 500; background: none; border: 1px solid transparent; border-bottom: none; padding: 10px 20px; cursor: pointer; color: var(--muted); border-radius: 6px 6px 0 0; }
+  nav button[aria-selected="true"] { color: var(--forest-dark); background: var(--paper); border-color: var(--line); margin-bottom: -1px; }
+  main { padding: 28px 24px 60px; }
+  section { display: none; }
+  section.active { display: block; }
+  h2 { font-weight: 400; font-size: 30px; color: var(--forest-dark); margin: 0 0 6px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0 20px; }
+  .fact { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--forest); border-radius: 6px; padding: 6px 14px; font-size: 17px; }
+  .fact b { font-weight: 600; }
+  figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+  figure img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  figcaption { color: var(--muted); font-style: italic; font-size: 16px; padding: 8px 4px 0; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 15px; background: var(--forest-light); color: var(--forest-dark); padding: 1px 5px; border-radius: 4px; }
+  footer { text-align: center; color: var(--muted); font-size: 15px; padding: 20px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Campus Customs: Resolved Board</h1>
+    <p class="sub">Screenshots of the React desk (<code>frontend/</code>) after each ticket was resolved in the full run on 2026-10-09. Start: $3,400.00 · End: $152.00.</p>
+    <nav role="tablist">
+      <button role="tab" aria-selected="true" data-panel="p101">Ticket 101</button>
+      <button role="tab" aria-selected="false" data-panel="p102">Ticket 102</button>
+      <button role="tab" aria-selected="false" data-panel="p103">Ticket 103</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="p101" class="active">
+    <h2>Ticket 101: Bulldog tee (resolved)</h2>
+    <div class="facts">
+      <span class="fact"><b>Agents:</b> Boss → Inventory, Accounting, Customer Service</span>
+      <span class="fact"><b>Approved:</b> invoice 501 $840.00 · PO $8.00 · draft to Tauhid</span>
+      <span class="fact"><b>Checking:</b> $3,400.00 → $2,552.00</span>
+    </div>
+    <figure>
+      <img src="screenshots/ticket_101.png" alt="Campus Customs desk showing ticket 101 resolved">
+      <figcaption>Taken right after the approvals for 101: the ticket stamped Resolved, the full run on the floor, the Boss's decision, the agent cards, two receipts in the cash drawer, and the in-tray stamped Paid / Paid / Approved.</figcaption>
+    </figure>
+  </section>
+
+  <section id="p102">
+    <h2>Ticket 102: Rent due (resolved)</h2>
+    <div class="facts">
+      <span class="fact"><b>Agents:</b> Boss → Facilities → Accounting</span>
+      <span class="fact"><b>Approved:</b> rent $2,400.00</span>
+      <span class="fact"><b>Checking:</b> $2,552.00 → $152.00</span>
+    </div>
+    <figure>
+      <img src="screenshots/ticket_102.png" alt="Campus Customs desk showing ticket 102 resolved">
+      <figcaption>The nested hand-off (Facilities asking Accounting) is visible as a second indent on the floor. The cash drawer shows the rent receipt and $152.00.</figcaption>
+    </figure>
+  </section>
+
+  <section id="p103">
+    <h2>Ticket 103: Bulk hoodie discount (resolved)</h2>
+    <div class="facts">
+      <span class="fact"><b>Agents:</b> Boss → Inventory + Accounting, then Customer Service</span>
+      <span class="fact"><b>Approved:</b> $46.00/unit discount · draft to the AI Club</span>
+      <span class="fact"><b>Checking:</b> $152.00 → $152.00 (no cash moved)</span>
+    </div>
+    <figure>
+      <img src="screenshots/ticket_103.png" alt="Campus Customs desk showing ticket 103 resolved">
+      <figcaption>All three tickets resolved. The Boss's to-do list flags the $264 restock as $112 more than the shop has, so no PO was made.</figcaption>
+    </figure>
+  </section>
+</main>
+
+<footer>Campus Customs Multi-Agent Operations · MGT 409 HW 5</footer>
+
+<script>
+  const tabs = document.querySelectorAll('[role="tab"]');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => {
+      const on = x === t;
+      x.setAttribute('aria-selected', on);
+      document.getElementById(x.dataset.panel).classList.toggle('active', on);
+    });
+  }));
+</script>
+</body>
+</html>

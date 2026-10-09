@@ -200,3 +200,15 @@ This file logs the prompts I typed to my vibe coder (Claude Code) while working 
 > None needed.
 
 **What was lacking after the first:** Nothing; the reflection covered all five questions with evidence from the ticket tabs, the Cash tab, and the audit trail.
+
+---
+
+## Problem 11: Submit to GitHub
+
+**Prompt:**
+> let's do the last problem, the github repo
+
+**Follow-up prompt** (my answers when it asked before publishing):
+> Repo name: hw5. Leave folder-joke.md out. Yes, create and push.
+
+**What was lacking after the first:** Nothing was wrong, but publishing a public repo is permanent, so the vibe coder stopped to confirm the repo name, whether to include a personal file, and that I wanted it public before pushing.
